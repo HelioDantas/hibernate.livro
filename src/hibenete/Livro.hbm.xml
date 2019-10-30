@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/10/2019 21:46:56 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibenete.Livro" table="livro" catalog="saraiva" optimistic-lock="version">
+        <composite-id name="id" class="hibenete.LivroId">
+            <key-property name="idlivro" type="int">
+                <column name="idlivro" />
+            </key-property>
+            <key-property name="idgenero" type="int">
+                <column name="idgenero" />
+            </key-property>
+            <key-property name="ideditora" type="int">
+                <column name="ideditora" />
+            </key-property>
+        </composite-id>
+        <property name="titulo" type="string">
+            <column name="titulo" length="100" not-null="true" />
+        </property>
+        <property name="preco" type="java.lang.Float">
+            <column name="preco" precision="12" scale="0" />
+        </property>
+        <property name="estoque" type="java.lang.Integer">
+            <column name="estoque" />
+        </property>
+    </class>
+</hibernate-mapping>
